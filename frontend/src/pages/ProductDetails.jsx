@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useAppContext } from "../context/AppContext";
+import { useAppContext } from "../context/AppContextStore";
 import { Link, useParams } from "react-router-dom";
 import { assets } from "../assets/assets";
 import ProductCard from "../components/ProductCard";
@@ -16,10 +16,11 @@ const ProductDetails = () => {
     useEffect(()=>{
         if(products.length > 0){
             let productsCopy = products.slice();
+            if (!product) return
             productsCopy = productsCopy.filter((item)=> product.category === item.category)
             setRelatedProducts(productsCopy.slice(0,5))
         }
-    },[products])
+    },[product, products])
 
     useEffect(()=>{
         setThumbnail(product?.image[0] ? product.image[0] : null)

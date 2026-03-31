@@ -1,6 +1,6 @@
 import React from "react";
 import { assets } from "../assets/assets";
-import { useAppContext } from "../context/AppContext";
+import { useAppContext } from "../context/AppContextStore";
 
 
 const ProductCard = ({product}) => {

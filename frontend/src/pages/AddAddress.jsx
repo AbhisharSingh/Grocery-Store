@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { assets } from '../assets/assets'
-import { useAppContext } from '../context/AppContext'
+import { useAppContext } from '../context/AppContextStore'
 import toast from 'react-hot-toast'
 
 // Input Field Component
@@ -38,8 +38,6 @@ const AddAddress = () => {
             ...prevAddress,
             [name]: value,
         }))
-        console.log(address);
-        
     }
 
 
@@ -64,7 +62,7 @@ const AddAddress = () => {
         if(!user){
             navigate('/cart')
         }
-    },[])
+    },[navigate, user])
 
   return (
     <div className='mt-16 pb-16'>

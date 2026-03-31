@@ -1,5 +1,5 @@
 import React from 'react'
-import { useAppContext } from '../../context/AppContext'
+import { useAppContext } from '../../context/AppContextStore'
 import toast from 'react-hot-toast'
 
 const ProductList = () => {
